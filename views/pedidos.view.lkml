@@ -66,9 +66,14 @@ view: pedidos {
 
   measure: test_metrics {#creo esta métrica para probar a subir en github
     label: "test"
+    type: sum
+    sql: ${beneficio} ;;
+    filters: [mercado.id_mercado: "-NULL"]
+  }
+  measure: test_metrics_sql { # Esta métrcia es la misma que la anterior pero usando la consulta directa a sql
+    label: "test_sql"
     type: number
-    sql: SUM(${beneficio} ;;
-  #  filters: [id_mercado: "-NULL"]
+    sql: SUM(CASE WHEN ${id_mercado} IS NOT NULL THEN ${beneficio} ELSE NULL END) ;;
   }
 
 
