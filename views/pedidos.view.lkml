@@ -67,7 +67,8 @@ view: pedidos {
   measure: test_metrics {#creo esta métrica para probar a subir en github
     label: "test"
     type: number
-    sql: ${total_ventas}-${descuento}-${costo_envio_total} ;;
+    sql: SUM(${beneficio} ;;
+  #  filters: [id_mercado: "-NULL"]
   }
 
 
