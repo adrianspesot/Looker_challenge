@@ -73,7 +73,13 @@ view: pedidos {
   measure: test_metrics_sql { # Esta métrcia es la misma que la anterior pero usando la consulta directa a sql
     label: "test_sql"
     type: number
-    sql: SUM(CASE WHEN ${id_mercado} IS NOT NULL THEN ${beneficio} ELSE NULL END) ;;
+    sql: SUM(CASE WHEN ${mercado.id_mercado} IS NOT NULL THEN ${beneficio} ELSE NULL END) ;;
+  }
+
+  measure: test_metrics_sql2 { # igual a test_metrics_sql pero en este caso usamos vendedores.region para ver si funciona de la misma forma
+    label: "test_sql2"
+    type: number
+    sql: SUM(CASE WHEN ${vendedores.region} IS NOT NULL THEN ${beneficio} ELSE NULL END) ;;
   }
 
 
