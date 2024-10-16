@@ -64,6 +64,12 @@ view: pedidos {
     sql: ${costo_envio} ;;
   }
 
+  measure: test_metrics {#creo esta métrica para probar a subir en github
+    label: "test"
+    type: number
+    sql: ${total_ventas}-${descuento}-${costo_envio_total} ;;
+  }
+
 
 
   dimension: cantidad {
