@@ -32,11 +32,7 @@ persist_with: challenge_looker_adrian_default_datagroup
 # Each joined view also needs to define a primary key.
 
 #explore: paso_er {}
-explore: vendedores {}
 
-explore: producto {}
-
-explore: devoluciones {}
 
 explore: pedidos {
   join: cliente{
@@ -70,7 +66,3 @@ explore: pedidos {
   }
 
 }
-
-explore: cliente {}
-
-explore: mercado {}
