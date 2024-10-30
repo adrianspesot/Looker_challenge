@@ -8,6 +8,8 @@ include: "/views/**/mercado.view.lkml"
 include: "/views/**/pedidos.view.lkml"
 include: "/views/**/producto.view.lkml"
 include: "/views/**/vendedores.view.lkml"
+include: "/views/**/users.view.lkml"
+include: "/views/**/distribution_center.view.lkml"
 
 
 # Datagroups define a caching policy for an Explore. To learn more,
@@ -66,3 +68,6 @@ explore: pedidos {
   }
 
 }
+
+explore: users {}
+explore: distribution_center {}
